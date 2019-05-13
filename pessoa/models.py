@@ -28,3 +28,14 @@ class PessoaModel(models.Model):
     def __str__(self):
         return self.pessoa_nome
 
+
+class ContatoModel(models.Model):
+    
+    contato_id = models.AutoField(primary_key=True)
+    contato_telefone = models.CharField(
+                       max_length=15,
+                       null=False,
+                       blank=False,
+                       verbose_name="Telefone")
+    pessoa = models.ForeignKey(PessoaModel, on_delete=models.CASCADE)
+                    

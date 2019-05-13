@@ -13,3 +13,10 @@ class PessoaForm(forms.ModelForm):
             'pessoa_logradouro',
             'pessoa_numero'
         ]
+        
+        
+class ContatoForm(forms.ModelForm):
+    
+    contato_telefone = forms.CharField(label="Telefone")
+    pessoa = forms.ModelChoiceField(queryset=PessoaModel.objects.all(), label="Contato")
+    

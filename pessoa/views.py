@@ -21,7 +21,7 @@ def insert_pessoa(request):
     context = {
         'form':form
     }
-    return render(request, 'novo2.html',context)
+    return render(request, 'novo3.html',context)
 
 def update_pessoa(request, id):
     pessoa = get_object_or_404(PessoaModel, pessoa_id=id)
